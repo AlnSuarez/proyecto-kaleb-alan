@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ModalConfig from './ModalConfig';
 
 function Timer({ timeLimit }) {
   const [time, setTime] = useState(timeLimit);
@@ -19,9 +20,13 @@ function Timer({ timeLimit }) {
     }, 1000);
   }, [time]);
 
+
+  
+
   return (
     <>
       <div style={{margin: '10px', border: '2px solid black'}}>{minutes < 10 && '0'}{minutes}:{seconds < 10 && '0'}{seconds}</div>
+      <ModalConfig/>
     </>
   )
 }
