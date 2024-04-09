@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import { TextField, Button, Modal, IconButton, Icon } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useSelector, useDispatch } from 'react-redux'
 
 const style = {
     position: 'absolute',
@@ -25,6 +26,10 @@ export default function ModalConfig({}) {
     const [longBreakInterval, setLongBreakInterval] = React.useState(4);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    // Redux
+    // const pomodoroConfig = useSelector((state) => state.pomodoroConfig.minutesFocus)
+    // const dispatch = useDispatch()
 
     return (
         <div>

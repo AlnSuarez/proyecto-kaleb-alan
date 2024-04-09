@@ -1,11 +1,11 @@
 import './App.css';
-import Timer from './components/Timer';
+import Pomodoro from './components/Pomodoro';
 
 function App() {
   return (
     <div className="App">
       <h1>POMODORO TIMER!</h1>
-      <Timer timeLimit='5'></Timer>
+      <Pomodoro />
       <small>By Alan + Kaleb</small>
     </div>
   );
