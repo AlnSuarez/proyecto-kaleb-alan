@@ -5,32 +5,32 @@ import {
     SET_LONG_BREAK_INTERVAL 
 } from "../actionsTypes/actionTypes";
 
-const setMinutesFocus = (payload) => {
+const setMinutesFocusAction = (payload) => {
   return {
     type: SET_MINUTES_FOCUS,
     payload,
   };
 };
 
-const setMinutesBreak = (payload) => {
+const setMinutesBreakAction = (payload) => {
   return {
     type: SET_MINUTES_BREAK,
     payload,
   };
 };
 
-const setMinutesBreakLarge = (payload) => {
+const setMinutesBreakLargeAction = (payload) => {
   return {
     type: SET_MINUTES_BREAK_LARGE,
     payload,
   };
 };
 
-const setLongBreakInterval = (payload) => {
+const setLongBreakIntervalAction = (payload) => {
   return {
     type: SET_LONG_BREAK_INTERVAL,
     payload,
   };
 };
 
-export { setMinutesFocus, setMinutesBreak, setMinutesBreakLarge, setLongBreakInterval };
+export { setMinutesFocusAction, setMinutesBreakAction, setMinutesBreakLargeAction, setLongBreakIntervalAction };
