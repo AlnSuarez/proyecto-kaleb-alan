@@ -85,6 +85,11 @@ export default function ModalConfig({}) {
                                         callBackSetter={setLongBreakInterval}
                                         numberTemp={longBreakInterval}
                                     />
+                                    Intervalo meta (veces):
+                                    <ModifyNumbers
+                                        callBackSetter={setIntervalGoal}
+                                        numberTemp={intervalGoal}
+                                    />
                                 </ModalBody>
                                 <ModalFooter>
                                     <Button
