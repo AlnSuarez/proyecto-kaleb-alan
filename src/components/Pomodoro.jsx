@@ -12,10 +12,10 @@ function Pomodoro() {
 			<div>Pomodoro</div>
 			<Timer play={play} setPlay={setPlay}/>
 			<Counter />
-			<ModalConfig />
 			<Button value={play} onClick={() => setPlay(!play)}>
 				{play ? 'STOP' : 'START'}
 			</Button>
+			<ModalConfig />
 		</>
 	);
 }
