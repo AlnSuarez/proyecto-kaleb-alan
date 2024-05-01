@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ModalConfig from './ModalConfig';
 import Timer from './Timer';
-import { Button } from '@mui/material';
 import Counter from './Counter';
+import { Button } from '@nextui-org/react';
 
 function Pomodoro() {
 	const [play, setPlay] = useState(false);
