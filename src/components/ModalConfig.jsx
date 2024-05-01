@@ -5,7 +5,7 @@ import { TextField, Button, Modal, IconButton, Icon } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useDispatch } from 'react-redux';
-import { setLongBreakIntervalAction, setMinutesBreakAction, setMinutesBreakLargeAction, setMinutesFocusAction } from '../actions/pomodoroConfigAction';
+import { setIntervalGoalAction, setLongBreakIntervalAction, setMinutesBreakAction, setMinutesBreakLargeAction, setMinutesFocusAction } from '../actions/pomodoroConfigAction';
 
 const style = {
 	position: 'absolute',
@@ -25,6 +25,7 @@ export default function ModalConfig({}) {
 	const [minutesBreak, setMinutesBreak] = React.useState(5);
 	const [minutesBreakLarge, setMinutesBreakLarge] = React.useState(15);
 	const [longBreakInterval, setLongBreakInterval] = React.useState(4);
+	const [intervalGoal, setIntervalGoal] = React.useState(8);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 	// REDUX
@@ -36,6 +37,7 @@ export default function ModalConfig({}) {
         dispatch(setMinutesBreakAction(minutesBreak));
         dispatch(setMinutesBreakLargeAction(minutesBreakLarge));
         dispatch(setLongBreakIntervalAction(longBreakInterval));
+        dispatch(setIntervalGoalAction(intervalGoal));
     }
 
 	return (
@@ -155,8 +157,33 @@ export default function ModalConfig({}) {
 						}}
 					>
 						<AddIcon />
+					</IconButton>				
+					<Typography id='modal-modal-description' sx={{ mt: 2 }}>
+						Intervalo meta (veces):
+					</Typography>
+					<IconButton
+						onClick={() => {
+							setIntervalGoal(intervalGoal - 1);
+						}}
+					>
+						<RemoveIcon />
 					</IconButton>
-
+					<TextField
+						id='outlined-basic'
+						variant='outlined'
+						value={intervalGoal}
+						type='number'
+						onChange={(e) => {
+							setIntervalGoal(parseInt(e.target.value));
+						}}
+					/>
+					<IconButton
+						onClick={() => {
+							setIntervalGoal(intervalGoal + 1);
+						}}
+					>
+						<AddIcon />
+					</IconButton>
 					<Button
 						variant='text'
 						color='primary'

@@ -2,7 +2,9 @@ import {
     SET_MINUTES_FOCUS,
     SET_MINUTES_BREAK,
     SET_MINUTES_BREAK_LARGE,
-    SET_LONG_BREAK_INTERVAL 
+    SET_LONG_BREAK_INTERVAL, 
+    SET_INTERVAL_GOAL,
+    SET_CURRENT_INTERVAL,
 } from "../actionsTypes/actionTypes";
 
 const setMinutesFocusAction = (payload) => {
@@ -33,4 +35,18 @@ const setLongBreakIntervalAction = (payload) => {
   };
 };
 
-export { setMinutesFocusAction, setMinutesBreakAction, setMinutesBreakLargeAction, setLongBreakIntervalAction };
+const setIntervalGoalAction = (payload) => {
+  return {
+    type: SET_INTERVAL_GOAL,
+    payload,
+  };
+};
+
+const setCurrentIntervalAction = (payload) => {
+  return {
+    type: SET_CURRENT_INTERVAL,
+    payload,
+  };
+};
+
+export { setMinutesFocusAction, setMinutesBreakAction, setMinutesBreakLargeAction, setLongBreakIntervalAction, setIntervalGoalAction, setCurrentIntervalAction };
