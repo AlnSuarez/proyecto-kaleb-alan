@@ -12,7 +12,7 @@ import {
 } from '@nextui-org/react';
 
 import { useDispatch } from 'react-redux';
-import {
+import { setIntervalGoalAction,
     setLongBreakIntervalAction,
     setMinutesBreakAction,
     setMinutesBreakLargeAction,
@@ -26,6 +26,7 @@ export default function ModalConfig({}) {
     const [minutesBreak, setMinutesBreak] = React.useState(5);
     const [minutesBreakLarge, setMinutesBreakLarge] = React.useState(15);
     const [longBreakInterval, setLongBreakInterval] = React.useState(4);
+	const [intervalGoal, setIntervalGoal] = React.useState(8);
 
     // REDUX
     const dispatch = useDispatch();
@@ -36,6 +37,7 @@ export default function ModalConfig({}) {
         dispatch(setMinutesBreakAction(minutesBreak));
         dispatch(setMinutesBreakLargeAction(minutesBreakLarge));
         dispatch(setLongBreakIntervalAction(longBreakInterval));
+        dispatch(setIntervalGoalAction(intervalGoal));
     };
 
     const resetConfiguration = () => {
